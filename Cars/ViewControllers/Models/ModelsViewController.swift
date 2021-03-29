@@ -59,6 +59,12 @@ extension ModelsViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        viewModel.selectModel(at: indexPath.row)
+    }
 }
 
 extension ModelsViewController: ModelsViewModelObserver {
@@ -69,7 +75,16 @@ extension ModelsViewController: ModelsViewModelObserver {
     func didFailToUpdateModels(withError error: Error) {
         let message = NSLocalizedString("Models.Loading Error", comment: "")
         let okTitle = NSLocalizedString("Action.OK", comment: "")
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: okTitle, style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
+    
+    func didSelectModel(with viewModel: CarSummaryViewModel) {
+        let message = "\(viewModel.manufacturer), \(viewModel.model)"
+        let okTitle = NSLocalizedString("Action.OK", comment: "")
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: okTitle, style: .default)
         alertController.addAction(okAction)
         present(alertController, animated: true)

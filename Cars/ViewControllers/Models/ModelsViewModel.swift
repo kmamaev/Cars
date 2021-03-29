@@ -1,6 +1,7 @@
 protocol ModelsViewModelObserver {
     func didUpdateModels()
     func didFailToUpdateModels(withError error: Error)
+    func didSelectModel(with viewModel: CarSummaryViewModel)
 }
 
 class ModelsViewModel: Observable {
@@ -33,8 +34,7 @@ class ModelsViewModel: Observable {
                     case .success(let listResponse):
                         self?.models = currentModels + listResponse.items.enumerated().map({ (index, model) in
                                 let actualIndex = currentModels.count + index + 1
-                                let rowType: RowType = actualIndex % 2 == 1 ? .odd : .even
-                                return ModelViewModel(name: model.name, rowType: rowType)
+                                return ModelViewModel(model: model, index: actualIndex)
                             })
                         self?.allItemsLoaded = listResponse.items.count < pageSize || self?.currentPage == (listResponse.totalPageCount - 1)
                         self?.currentPage += 1
@@ -44,5 +44,11 @@ class ModelsViewModel: Observable {
                 }
             }
         print("Loading page \(currentPage)...")
+    }
+    
+    func selectModel(at index: Int) {
+        let model = models[index].model
+        let carSummary = CarSummaryViewModel(manufacturer: manufacturer.name, model: model.name)
+        notifyObservers({ $0.didSelectModel(with: carSummary) })
     }
 }

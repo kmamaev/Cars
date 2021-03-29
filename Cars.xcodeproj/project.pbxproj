@@ -29,6 +29,7 @@
 		B5884A7A261168AE008FB083 /* ModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5884A78261168AE008FB083 /* ModelCell.swift */; };
 		B5884A7B261168AE008FB083 /* ModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5884A79261168AE008FB083 /* ModelCell.xib */; };
 		B5884A7E261168BB008FB083 /* ModelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5884A7D261168BB008FB083 /* ModelViewModel.swift */; };
+		B5884A8226117280008FB083 /* CarSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5884A8126117280008FB083 /* CarSummaryViewModel.swift */; };
 		B597350226104D930083D16A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597350126104D930083D16A /* AppDelegate.swift */; };
 		B597350426104D940083D16A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597350326104D940083D16A /* SceneDelegate.swift */; };
 		B597352226104EFB0083D16A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B597351726104EFA0083D16A /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		B5884A78261168AE008FB083 /* ModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCell.swift; sourceTree = "<group>"; };
 		B5884A79261168AE008FB083 /* ModelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelCell.xib; sourceTree = "<group>"; };
 		B5884A7D261168BB008FB083 /* ModelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewModel.swift; sourceTree = "<group>"; };
+		B5884A8126117280008FB083 /* CarSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSummaryViewModel.swift; sourceTree = "<group>"; };
 		B59734FE26104D930083D16A /* Cars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B597350126104D930083D16A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B597350326104D940083D16A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		B5884A8026117276008FB083 /* CarSummary */ = {
+			isa = PBXGroup;
+			children = (
+				B5884A8126117280008FB083 /* CarSummaryViewModel.swift */,
+			);
+			path = CarSummary;
+			sourceTree = "<group>";
+		};
 		B59734F526104D930083D16A = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +243,7 @@
 		B597352026104EFA0083D16A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B5884A8026117276008FB083 /* CarSummary */,
 				B577C2FA2610739D00D066CB /* Manufacturers */,
 				B5884A70261165DD008FB083 /* Models */,
 				B597351A26104EFA0083D16A /* Main.storyboard */,
@@ -325,6 +336,7 @@
 				B5884A502610D6EC008FB083 /* RowType.swift in Sources */,
 				B577C2FC2610739D00D066CB /* ManufacturersViewController.swift in Sources */,
 				B5884A432610832F008FB083 /* APIError.swift in Sources */,
+				B5884A8226117280008FB083 /* CarSummaryViewModel.swift in Sources */,
 				B5884A6B261164BC008FB083 /* Model.swift in Sources */,
 				B577C2F726106F8100D066CB /* CarsService.swift in Sources */,
 				B577C31726107B2700D066CB /* GetManufacturersResponse.swift in Sources */,
