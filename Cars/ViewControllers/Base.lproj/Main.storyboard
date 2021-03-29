@@ -42,6 +42,40 @@
             </objects>
             <point key="canvasLocation" x="104" y="34"/>
         </scene>
+        <!--Models View Controller-->
+        <scene sceneID="e9O-2T-C24">
+            <objects>
+                <viewController storyboardIdentifier="ModelsViewController" id="0OJ-25-8kL" customClass="ModelsViewController" customModule="Cars" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Ix-NP-qOQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="emO-xm-wKk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="0OJ-25-8kL" id="5uG-L3-p3y"/>
+                                    <outlet property="delegate" destination="0OJ-25-8kL" id="xnV-cZ-wll"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7n0-0w-dpG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7n0-0w-dpG" firstAttribute="trailing" secondItem="emO-xm-wKk" secondAttribute="trailing" id="8wr-Qi-mtF"/>
+                            <constraint firstAttribute="bottom" secondItem="emO-xm-wKk" secondAttribute="bottom" id="S3r-WP-84m"/>
+                            <constraint firstItem="emO-xm-wKk" firstAttribute="leading" secondItem="7n0-0w-dpG" secondAttribute="leading" id="v7p-vt-xdH"/>
+                            <constraint firstItem="emO-xm-wKk" firstAttribute="top" secondItem="0Ix-NP-qOQ" secondAttribute="top" id="xDa-Je-O04"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="emO-xm-wKk" id="hF9-gT-pzZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uhe-xS-pTW" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="33"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

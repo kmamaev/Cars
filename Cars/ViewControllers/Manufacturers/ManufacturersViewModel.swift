@@ -1,6 +1,7 @@
 protocol ManufacturersViewModelObserver {
     func didUpdateManufacturers()
     func didFailToUpdateManufacturers(withError error: Error)
+    func didSelectManufacturer(with viewModel: ModelsViewModel)
 }
 
 class ManufacturersViewModel: Observable {
@@ -31,8 +32,7 @@ class ManufacturersViewModel: Observable {
                     case .success(let listResponse):
                         self?.manufacturers = currentManufactureres + listResponse.items.enumerated().map({ (index, manufacturer) in
                                 let actualIndex = currentManufactureres.count + index + 1
-                                let rowType: RowType = actualIndex % 2 == 1 ? .odd : .even
-                                return ManufacturerViewModel(name: manufacturer.name, rowType: rowType)
+                                return ManufacturerViewModel(manufacturer: manufacturer, index: actualIndex)
                             })
                         self?.allItemsLoaded = listResponse.items.count < pageSize || self?.currentPage == (listResponse.totalPageCount - 1)
                         self?.currentPage += 1
@@ -42,5 +42,11 @@ class ManufacturersViewModel: Observable {
                 }
             }
         print("Loading page \(currentPage)...")
+    }
+    
+    func selectManufacturer(at index: Int) {
+        let manufacturer = manufacturers[index].manufacturer
+        let modelsViewModel = ModelsViewModel(carsService: carsService, manufacturer: manufacturer)
+        notifyObservers({ $0.didSelectManufacturer(with: modelsViewModel) })
     }
 }

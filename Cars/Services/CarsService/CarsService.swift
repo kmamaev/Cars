@@ -28,4 +28,23 @@ extension CarsService {
                 }
             })?.asServiceTask()
     }
+    
+    func getModels(manufacturer: Manufacturer, page: Int, pageSize: Int, completion: @escaping (Result<ListResponse<Model>, Error>) -> ()) -> ServiceTask? {
+        let parameters = [
+                URLQueryItem(name: "manufacturer", value: manufacturer.id),
+                URLQueryItem(name: "page", value: String(page)),
+                URLQueryItem(name: "pageSize", value: String(pageSize)),
+            ]
+        let context = RequestContext(apiMethod: "/v1/car-types/main-types", parameters: parameters)
+        return apiService.runTask(context: context, completion: { (result: Result<GetModelsResponse, Error>) in
+                switch result {
+                case .success(let response):
+                    let models = response.wkda.map({ Model(name: $0.0) }).sorted(by: { $0.name < $1.name }) // The server should send to us an already sorted array instead of a dictionary. Otherwise we have to predict how the objects are supposed to be sorted which can lead to a potential bug.
+                    let listResponse = ListResponse(page: response.page, pageSize: response.pageSize, totalPageCount: response.totalPageCount, items: models)
+                    completion(.success(listResponse))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            })?.asServiceTask()
+    }
 }

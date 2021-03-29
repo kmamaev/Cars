@@ -1,13 +1,13 @@
 import UIKit
 
-class ManufacturerCell: UITableViewCell {
+class ModelCell: UITableViewCell {
     @IBOutlet private var titleLabel: UILabel!
-    
-    func configureWith(_ manufacturer: ManufacturerViewModel) {
-        titleLabel.text = manufacturer.name
+
+    func configureWith(_ model: ModelViewModel) {
+        titleLabel.text = model.name
         
         let backgroundColor: UIColor
-        switch manufacturer.rowType {
+        switch model.rowType {
             case .even:
                 backgroundColor = UIColor(red: 255.0/255, green: 255.0/255, blue: 236.0/255, alpha: 1)
             case .odd:

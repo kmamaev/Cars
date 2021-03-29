@@ -1,3 +1,5 @@
 "Manufacturers.Title" = "Manufacturers";
 "Manufacturers.Loading Error" = "An error has occured while loading manufacturers.";
+"Models.Title" = "Models";
+"Models.Loading Error" = "An error has occured while loading models.";
 "Action.OK" = "OK";

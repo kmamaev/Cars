@@ -59,6 +59,12 @@ extension ManufacturersViewController: UITableViewDataSource, UITableViewDelegat
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        viewModel.selectManufacturer(at: indexPath.row)
+    }
 }
 
 extension ManufacturersViewController: ManufacturersViewModelObserver {
@@ -73,5 +79,12 @@ extension ManufacturersViewController: ManufacturersViewModelObserver {
         let okAction = UIAlertAction(title: okTitle, style: .default)
         alertController.addAction(okAction)
         present(alertController, animated: true)
+    }
+    
+    func didSelectManufacturer(with viewModel: ModelsViewModel) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let modelsViewController = storyboard.instantiateViewController(identifier: "ModelsViewController") as ModelsViewController
+        modelsViewController.viewModel = viewModel
+        navigationController?.pushViewController(modelsViewController, animated: true)
     }
 }

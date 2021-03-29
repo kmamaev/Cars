@@ -22,6 +22,13 @@
 		B5884A5A2610D8A8008FB083 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5884A592610D8A8008FB083 /* Observable.swift */; };
 		B5884A652610DAD8008FB083 /* SpinnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5884A642610DAD8008FB083 /* SpinnerCell.swift */; };
 		B5884A682610DEBB008FB083 /* ServiceTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5884A672610DEBB008FB083 /* ServiceTask.swift */; };
+		B5884A6B261164BC008FB083 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5884A6A261164BC008FB083 /* Model.swift */; };
+		B5884A6E26116505008FB083 /* GetModelsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5884A6D26116505008FB083 /* GetModelsResponse.swift */; };
+		B5884A72261165F0008FB083 /* ModelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5884A71261165F0008FB083 /* ModelsViewController.swift */; };
+		B5884A752611666E008FB083 /* ModelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5884A742611666E008FB083 /* ModelsViewModel.swift */; };
+		B5884A7A261168AE008FB083 /* ModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5884A78261168AE008FB083 /* ModelCell.swift */; };
+		B5884A7B261168AE008FB083 /* ModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5884A79261168AE008FB083 /* ModelCell.xib */; };
+		B5884A7E261168BB008FB083 /* ModelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5884A7D261168BB008FB083 /* ModelViewModel.swift */; };
 		B597350226104D930083D16A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597350126104D930083D16A /* AppDelegate.swift */; };
 		B597350426104D940083D16A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597350326104D940083D16A /* SceneDelegate.swift */; };
 		B597352226104EFB0083D16A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B597351726104EFA0083D16A /* Assets.xcassets */; };
@@ -47,6 +54,13 @@
 		B5884A592610D8A8008FB083 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		B5884A642610DAD8008FB083 /* SpinnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerCell.swift; sourceTree = "<group>"; };
 		B5884A672610DEBB008FB083 /* ServiceTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTask.swift; sourceTree = "<group>"; };
+		B5884A6A261164BC008FB083 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B5884A6D26116505008FB083 /* GetModelsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetModelsResponse.swift; sourceTree = "<group>"; };
+		B5884A71261165F0008FB083 /* ModelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsViewController.swift; sourceTree = "<group>"; };
+		B5884A742611666E008FB083 /* ModelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsViewModel.swift; sourceTree = "<group>"; };
+		B5884A78261168AE008FB083 /* ModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCell.swift; sourceTree = "<group>"; };
+		B5884A79261168AE008FB083 /* ModelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelCell.xib; sourceTree = "<group>"; };
+		B5884A7D261168BB008FB083 /* ModelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewModel.swift; sourceTree = "<group>"; };
 		B59734FE26104D930083D16A /* Cars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B597350126104D930083D16A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B597350326104D940083D16A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +127,7 @@
 			children = (
 				B5884A4626108815008FB083 /* ListResponse.swift */,
 				B577C31626107B2700D066CB /* GetManufacturersResponse.swift */,
+				B5884A6D26116505008FB083 /* GetModelsResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -123,6 +138,26 @@
 				B5884A642610DAD8008FB083 /* SpinnerCell.swift */,
 			);
 			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		B5884A70261165DD008FB083 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5884A7726116891008FB083 /* Cells */,
+				B5884A71261165F0008FB083 /* ModelsViewController.swift */,
+				B5884A742611666E008FB083 /* ModelsViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B5884A7726116891008FB083 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B5884A78261168AE008FB083 /* ModelCell.swift */,
+				B5884A79261168AE008FB083 /* ModelCell.xib */,
+				B5884A7D261168BB008FB083 /* ModelViewModel.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		B59734F526104D930083D16A = {
@@ -179,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				B5973534261059CC0083D16A /* Manufacturer.swift */,
+				B5884A6A261164BC008FB083 /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				B577C2FA2610739D00D066CB /* Manufacturers */,
+				B5884A70261165DD008FB083 /* Models */,
 				B597351A26104EFA0083D16A /* Main.storyboard */,
 			);
 			path = ViewControllers;
@@ -263,6 +300,7 @@
 				B5884A4C2610D3E0008FB083 /* Localizable.strings in Resources */,
 				B597352226104EFB0083D16A /* Assets.xcassets in Resources */,
 				B597352426104EFB0083D16A /* Main.storyboard in Resources */,
+				B5884A7B261168AE008FB083 /* ModelCell.xib in Resources */,
 				B577C3062610746300D066CB /* ManufacturerCell.xib in Resources */,
 				B597352326104EFB0083D16A /* LaunchScreen.storyboard in Resources */,
 			);
@@ -278,18 +316,24 @@
 				B597350226104D930083D16A /* AppDelegate.swift in Sources */,
 				B5884A5A2610D8A8008FB083 /* Observable.swift in Sources */,
 				B5973535261059CC0083D16A /* Manufacturer.swift in Sources */,
+				B5884A7E261168BB008FB083 /* ModelViewModel.swift in Sources */,
+				B5884A7A261168AE008FB083 /* ModelCell.swift in Sources */,
 				B5884A682610DEBB008FB083 /* ServiceTask.swift in Sources */,
+				B5884A752611666E008FB083 /* ModelsViewModel.swift in Sources */,
 				B5973531261050E80083D16A /* APIService.swift in Sources */,
 				B577C30C2610779100D066CB /* RequestContext.swift in Sources */,
 				B5884A502610D6EC008FB083 /* RowType.swift in Sources */,
 				B577C2FC2610739D00D066CB /* ManufacturersViewController.swift in Sources */,
 				B5884A432610832F008FB083 /* APIError.swift in Sources */,
+				B5884A6B261164BC008FB083 /* Model.swift in Sources */,
 				B577C2F726106F8100D066CB /* CarsService.swift in Sources */,
 				B577C31726107B2700D066CB /* GetManufacturersResponse.swift in Sources */,
+				B5884A72261165F0008FB083 /* ModelsViewController.swift in Sources */,
 				B577C3092610748600D066CB /* ManufacturerViewModel.swift in Sources */,
 				B5884A652610DAD8008FB083 /* SpinnerCell.swift in Sources */,
 				B577C300261073B400D066CB /* ManufacturersViewModel.swift in Sources */,
 				B5884A4726108815008FB083 /* ListResponse.swift in Sources */,
+				B5884A6E26116505008FB083 /* GetModelsResponse.swift in Sources */,
 				B577C3052610746300D066CB /* ManufacturerCell.swift in Sources */,
 				B597350426104D940083D16A /* SceneDelegate.swift in Sources */,
 			);
