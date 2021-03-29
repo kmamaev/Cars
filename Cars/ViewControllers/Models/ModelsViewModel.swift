@@ -43,7 +43,9 @@ class ModelsViewModel: Observable {
                         self?.notifyObservers({ $0.didFailToUpdateModels(withError: error) })
                 }
             }
+        #if DEBUG
         print("Loading page \(currentPage)...")
+        #endif
     }
     
     func selectModel(at index: Int) {

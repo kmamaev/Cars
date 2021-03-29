@@ -14,8 +14,10 @@ class APIService {
     func runTask<ResponseType: Decodable>(context: RequestContext, completion: @escaping (Result<ResponseType, Error>) -> ()) -> URLSessionDataTask? {
         do {
             let urlRequest = try builtUrlRequest(from: context)
-            #warning("replace with logging")
+            // TODO: Use SwiftyBeaver for loggin
+            #if DEBUG
             print("Request: \(urlRequest.url?.absoluteString ?? "")")
+            #endif
             let task = session.dataTask(with: urlRequest) {(data, response, error) in
                 if let error = error {
                     DispatchQueue.main.async {
@@ -29,7 +31,9 @@ class APIService {
                         }
                     return
                 }
+                #if DEBUG
                 print("Response: \(String(data: data, encoding: .utf8)!)")
+                #endif
                 do {
                     let decodedResponse = try JSONDecoder().decode(ResponseType.self, from: data)
                     DispatchQueue.main.async {

@@ -41,7 +41,9 @@ class ManufacturersViewModel: Observable {
                         self?.notifyObservers({ $0.didFailToUpdateManufacturers(withError: error) })
                 }
             }
+        #if DEBUG
         print("Loading page \(currentPage)...")
+        #endif
     }
     
     func selectManufacturer(at index: Int) {
